@@ -1,0 +1,12 @@
+<h4>$venue.getName()</h4><br>
+#if ($bands.size() != 0)
+  #foreach ($band in $bands)
+    <a href="/bands/$band.getId()">$band.getName()</a><br>
+  #end
+#else
+  <p><em>No bands have been added for $venue.getName()!</em><p>
+#end
+
+<br><a href="/venues">All Venues</a>
+<strong class="clickToView">|</strong>
+<a href="/bands">All Bands</a>
