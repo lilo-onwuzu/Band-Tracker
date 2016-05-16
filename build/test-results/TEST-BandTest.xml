@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BandTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-05-16T04:54:21" hostname="epicodus-45.local" time="0.256">
+  <properties/>
+  <testcase name="save_savesObjectIntoDatabase_true" classname="BandTest" time="0.105"/>
+  <testcase name="equals_returnsTrueIfDescriptionsAreTheSame_true" classname="BandTest" time="0.006"/>
+  <testcase name="delete_deletesAllBandsAndVenuesAssociations" classname="BandTest" time="0.034"/>
+  <testcase name="Band_InstantiatesWithString_true" classname="BandTest" time="0.006"/>
+  <testcase name="find_findBandInDatabase_true" classname="BandTest" time="0.017"/>
+  <testcase name="addVenue_addsVenueToBand_true" classname="BandTest" time="0.026"/>
+  <testcase name="save_assignsIdToObject_int" classname="BandTest" time="0.013"/>
+  <testcase name="all_EmptyAtFirst_true" classname="BandTest" time="0.008"/>
+  <testcase name="update_updateBandDescriptionInDatabase_true" classname="BandTest" time="0.018"/>
+  <testcase name="getVenue_getsVenueForABand_true" classname="BandTest" time="0.021"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

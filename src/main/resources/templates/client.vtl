@@ -1,0 +1,11 @@
+<h4>$client.getName()</h4>
+
+<a href="/stylists/$stylist.getId()/clients/$client.getId()/remove">Delete this client</a><br>
+
+<form action="/stylists/$stylist.getId()/clients/$client.getId()" method="post">
+  <label for="editClient">Edit Client's name:</label>
+  <input id="editClient" name="editClient" type="text">
+  <button type="submit" class="btn btn-info">Edit</button>
+</form>
+
+<a href="/stylists/$stylist.getId()/clients">Return to $stylist.getName()'s Client List </a>

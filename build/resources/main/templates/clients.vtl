@@ -1,0 +1,11 @@
+#if ($clients.size() != 0)
+    #foreach ($client in $clients)
+      <a href="/stylists/$stylist.getId()/clients/$client.getId()">$client.getName()</a><br>
+    #end
+#else
+  <p><em>No clients have been added for $stylist.getName()!</em><p>
+#end
+
+<a href="/stylists/$stylist.getId()/clients/new">Add New Client For $stylist.getName()</a>
+<strong class="clickToView">|</strong>
+<a href="/stylists">Full List of Stylists</a>
