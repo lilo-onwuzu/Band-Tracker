@@ -63,6 +63,40 @@ ALTER SEQUENCE bands_id_seq OWNED BY bands.id;
 
 
 --
+-- Name: bands_venues; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+--
+
+CREATE TABLE bands_venues (
+    id integer NOT NULL,
+    band_id integer,
+    venue_id integer
+);
+
+
+ALTER TABLE bands_venues OWNER TO "Guest";
+
+--
+-- Name: bands_venues_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+--
+
+CREATE SEQUENCE bands_venues_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE bands_venues_id_seq OWNER TO "Guest";
+
+--
+-- Name: bands_venues_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+--
+
+ALTER SEQUENCE bands_venues_id_seq OWNED BY bands_venues.id;
+
+
+--
 -- Name: venues; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
@@ -106,6 +140,13 @@ ALTER TABLE ONLY bands ALTER COLUMN id SET DEFAULT nextval('bands_id_seq'::regcl
 -- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
+ALTER TABLE ONLY bands_venues ALTER COLUMN id SET DEFAULT nextval('bands_venues_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
+--
+
 ALTER TABLE ONLY venues ALTER COLUMN id SET DEFAULT nextval('venues_id_seq'::regclass);
 
 
@@ -121,7 +162,22 @@ COPY bands (id, name) FROM stdin;
 -- Name: bands_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('bands_id_seq', 1, false);
+SELECT pg_catalog.setval('bands_id_seq', 287, true);
+
+
+--
+-- Data for Name: bands_venues; Type: TABLE DATA; Schema: public; Owner: Guest
+--
+
+COPY bands_venues (id, band_id, venue_id) FROM stdin;
+\.
+
+
+--
+-- Name: bands_venues_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+--
+
+SELECT pg_catalog.setval('bands_venues_id_seq', 142, true);
 
 
 --
@@ -136,7 +192,7 @@ COPY venues (id, name) FROM stdin;
 -- Name: venues_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('venues_id_seq', 1, false);
+SELECT pg_catalog.setval('venues_id_seq', 287, true);
 
 
 --
@@ -145,6 +201,14 @@ SELECT pg_catalog.setval('venues_id_seq', 1, false);
 
 ALTER TABLE ONLY bands
     ADD CONSTRAINT bands_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: bands_venues_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+--
+
+ALTER TABLE ONLY bands_venues
+    ADD CONSTRAINT bands_venues_pkey PRIMARY KEY (id);
 
 
 --
