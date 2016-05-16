@@ -8,6 +8,13 @@
 #end
 
 <a href="/venues/$venue.getId()/remove">Delete $venue.getName()</a><br>
-<a href="/venues">All Venues</a>
+<h3>Edit Venue Name</h3>
+<form action="/venues/$venue.getId()/edit" method="post">
+  <label for="editVenue">New Band Name:</label>
+  <input id="editVenue" name="editVenue" type="text">
+  <button type="submit" class="btn btn-info">Edit</button>
+</form>
+
+<br><a href="/venues">All Venues</a>
 <strong class="clickToView">|</strong>
 <a href="/bands">All Bands</a>

@@ -103,6 +103,16 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    // update bandname through post request from the form on band.vtl page. redirects to band details page
+    post("/bands/:band_id/edit", (request, response) -> {
+      HashMap model = new HashMap();
+      Band band = Band.find(Integer.parseInt(request.params(":band_id")));
+      String editBand = request.queryParams("editBand");
+      band.update(editBand);
+      response.redirect("/bands/" + band.getId());
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     // venue details
     get("/venues/:venue_id", (request, response) -> {
       HashMap model = new HashMap();
@@ -130,6 +140,16 @@ public class App {
       Venue venue = Venue.find(Integer.parseInt(request.params(":venue_id")));
       venue.delete();
       response.redirect("/venues");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    // update venuename through post request from the form on venue.vtl page. redirects to venue details page
+    post("/venues/:venue_id/edit", (request, response) -> {
+      HashMap model = new HashMap();
+      Venue venue = Venue.find(Integer.parseInt(request.params(":venue_id")));
+      String editVenue = request.queryParams("editVenue");
+      venue.update(editVenue);
+      response.redirect("/venues/" + venue.getId());
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

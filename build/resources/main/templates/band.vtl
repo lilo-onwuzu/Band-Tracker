@@ -9,7 +9,14 @@
 #end
 
 <a href="/bands/$band.getId()/remove">Delete $band.getName()</a><br>
-<a href="/bands">All Bands</a>
+<h3>Edit Band Name</h3>
+<form action="/bands/$band.getId()/edit" method="post">
+  <label for="editBand">New Band Name:</label>
+  <input id="editBand" name="editBand" type="text">
+  <button type="submit" class="btn btn-info">Edit</button>
+</form>
+
+<br><a href="/bands">All Bands</a>
 <strong class="clickToView">|</strong>
 <a href="/venues">All Venues</a><br>
 <a href="/bands/$band.getId()/add_venue">Add a Venue For $band.getName()</a>
