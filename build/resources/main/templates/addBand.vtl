@@ -1,8 +1,0 @@
-<form action="/venues/$venue.getId()" method="post">
-  <label for ="addBand">Select a Band that has played in $venue.getName()</label>
-  <select id="addBand" name="addBand" type="text">
-    #foreach ($band in $allBands)
-      <option value="$band.getId()">$band.getName()</option>
-    #end
-  </select>
-  <button type="submit" class="btn btn-info">Add Band</button>
