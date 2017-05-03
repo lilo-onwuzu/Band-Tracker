@@ -6,17 +6,8 @@ import java.util.HashMap;
 
 public class App {
 
-  // connect to heroku through maven dependency manager
-  // static int getHerokuAssignedPort() {
-  //   ProcessBuilder processBuilder = new ProcessBuilder();
-  //   if (processBuilder.environment().get("PORT") != null) {
-  //     return Integer.parseInt(processBuilder.environment().get("PORT"));
-  //   }
-  //   return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
-  // }
-
   public static void main(String [] args) {
-    // connect to heroku through gradle dependency manager
+    // allow heroku chose port if possible
     ProcessBuilder process = new ProcessBuilder();
      Integer port;
      if (process.environment().get("PORT") != null) {
@@ -27,10 +18,7 @@ public class App {
 
     setPort(port);
 
-    // connect to heroku through maven dependency manager
-    //port(getHerokuAssignedPort());
-
-    staticFileLocation("/public");
+    staticFileLocation("/public"); // watch out for css file
     String layout = "templates/layout.vtl";
 
     get("/", (request, response) -> {
