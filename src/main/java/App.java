@@ -6,17 +6,29 @@ import java.util.HashMap;
 
 public class App {
 
-  public static void main(String [] args) {
-    // set up for heroku
-    ProcessBuilder process = new ProcessBuilder();
-     Integer port;
-     if (process.environment().get("PORT") != null) {
-         port = Integer.parseInt(process.environment().get("PORT"));
-     } else {
-         port = 4567;
-     }
+  // connect to heroku through maven dependency manager
+  static int getHerokuAssignedPort() {
+    ProcessBuilder processBuilder = new ProcessBuilder();
+    if (processBuilder.environment().get("PORT") != null) {
+      return Integer.parseInt(processBuilder.environment().get("PORT"));
+    }
+    return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+  }
 
-    setPort(port);
+  public static void main(String [] args) {
+    // connect to heroku through gradle dependency manager
+    // ProcessBuilder process = new ProcessBuilder();
+    //  Integer port;
+    //  if (process.environment().get("PORT") != null) {
+    //      port = Integer.parseInt(process.environment().get("PORT"));
+    //  } else {
+    //      port = 4567;
+    //  }
+    //
+    // setPort(port);
+
+    // connect to heroku through maven dependency manager
+    port(getHerokuAssignedPort());
 
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
