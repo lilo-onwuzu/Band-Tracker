@@ -53,9 +53,9 @@
 	lpr422@gmail.com
 	
 #### _Technologies Used_
-	HTML, CSS, Object Oriented Java, SQL on POSTGREs DB, Fluentinum/Selenium, Gradle, BDD Testing, 
-	jUnit, Apache Spark, Apache Velocity, Google API Fonts
-	Many to Many Database Relationships,
+	HTML, CSS, Object Oriented Java, SQL on POSTGREs DB, Selenium Web Driver- UI Testing, Fluentinum Adapter, Gradle, BDD Testing, 
+	jUnit backend testing, Spark Framework, Velocity Templates, Velocity Template Engine, Google API Fonts, RESTful routing
+	Many to Many Database Relationships, Gradle Dependency Manager, Maven Dependency Manager, Heroku Postgres,  
 
 #### _License_
 	This software is licensed under the MIT license
