@@ -28,8 +28,6 @@
 	 
 	1. Set Up To Run Database Locally On Computer (Optional- for testing)
 		First clone this repository
-		Install Gradle (a build & test automation program that will manage all our dependencies)
-		Build in the terminal using 'gradle run' command
 		Install Postgres
 		Run "pg_ctl start" in terminal to start running postgres server
 		Run "psql" in a new terminal to access DB
@@ -38,6 +36,9 @@
 			Run "CREATE DATABASE band_tracker_test WITH TEMPLATE band_tracker;"
 		In Terminal:
 			Run "psql band_tracker < band_tracker.sql"
+			Run "psql band_tracker_test < band_tracker_test.sql"
+			Install Gradle (a build & test automation program that will manage all our dependencies)
+			Build app using 'gradle run' command
 		Open localhost:4567 in any browser to use the web application
 		
 	2. Visit app with database running on remote heroku server: https://bands-and-venues.herokuapp.com/
