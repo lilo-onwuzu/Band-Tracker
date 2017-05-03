@@ -1,0 +1,10 @@
+#if ($venues.size() != 0)
+  #foreach ($venue in $venues)
+    <a class="list" href="/venues/$venue.getId()">$venue.getName()</a><br><br>
+  #end
+#else
+  <p><em class="list">No venues have been added to the list!</em><p>
+#end
+
+<br>
+<a href="/venues/new">Add New Venue</a>
